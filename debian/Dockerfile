@@ -2,7 +2,7 @@ ARG APACHE_VERSION=2.4
 
 FROM httpd:${APACHE_VERSION} as build
 
-ARG MELLON_VERSION=0.16.0
+ARG MELLON_VERSION=0.14.2
 
 RUN apt-get update && \
   apt-get install build-essential apache2-dev liblasso3 pkg-config liblasso3-dev libcurl4-openssl-dev curl libxmlsec1 libxmlsec1-dev ca-certificates -y

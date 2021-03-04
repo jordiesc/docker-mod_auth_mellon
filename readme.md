@@ -76,9 +76,9 @@ $ git clone https://github.com/SoarinFerret/docker-mod_auth_mellon.git mellon
 $ cd mellon
 $
 $ # Alpine Build
-$ docker build --rm --build-arg APACHE_VERSION=2.4.38 --build-arg=0.14.2 -f "alpine/Dockerfile" -t mellon:alpine alpine
+$ docker build --rm --build-arg APACHE_VERSION=2.4.38 --build-arg MELLON_VERSION=0.14.2 -f "alpine/Dockerfile" -t mellon:alpine alpine
 $ # Debian Build
-$ docker build --rm --build-arg APACHE_VERSION=2.4.38 --build-arg=0.14.2 -f "debian/Dockerfile" -t mellon:debian debian
+$ docker build --rm --build-arg APACHE_VERSION=2.4.38 --build-arg MELLON_VERSION=0.14.2 -f "debian/Dockerfile" -t mellon:debian debian
 ```
 
 ## Docs / Resources
