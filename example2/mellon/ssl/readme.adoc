@@ -1,0 +1,16 @@
+sudo openssl req -new > new.ssl.csr
+
+password is samltest
+-----
+Country Name (2 letter code) [AU]:ES
+State or Province Name (full name) [Some-State]:Barcelona
+Locality Name (eg, city) []:Barcelona
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:samltest
+Organizational Unit Name (eg, section) []:samltest
+Common Name (e.g. server FQDN or YOUR name) []:samltest.org
+Email Address []:
+
+password samltest
+
+sudo openssl rsa -in privkey.pem -out samltest.org.key
+sudo openssl x509 -in new.ssl.csr -out samltest.org.crt -req -signkey samltest.org.key -days 3600

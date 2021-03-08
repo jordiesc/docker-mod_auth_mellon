@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  httpd:
+    build: .
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./mellonconf:/usr/local/apache2/conf.d:rw
+
+      # Sample location for mellon signing certs
+      -  ./mellonkeys:/usr/local/apache2/mellon:rw
+
+      # optional SSL
+      - ./ssl:/usr/local/apache2/ssl:ro
+    extra_hosts:
+      - "samltest.org:127.0.0.1"
+  backend:
+    image: jordiesc/simpleapp:v1
+    ports:
+      - 8888:8080
